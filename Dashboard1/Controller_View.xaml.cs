@@ -341,55 +341,34 @@ namespace Dashboard1
 
         private void Generate_PDF_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show(test_textbox, application_name);
+            try
+            {
+                Sensor_Batch = Sensor_input_Helper.MySql_Get_Average(IP_Address_Input);
+                string company_name = SensorHelper_2.read_config_name();
+                string company_addres = SensorHelper_2.read_config_addr();
+                bool isPremature = false;
+                int ExpectedPieces = Sensor_Batch.number_per_interval_cls * Sensor_Batch.total_interval_cls;
+                int ActualPieces = Sensor_Batch.List_Measure_Result.Count();
 
-            if (String.IsNullOrEmpty(txt_supplier.Text))
-            {
-                MessageBox.Show("Please enter Supplier Name", application_name);
-            }
+                //Sensor_Batch.List_Average_Result = SensorHelper_2.Test_ListSQLMeasureResult(); // testing only
 
-            //Printed By
-            else if (String.IsNullOrEmpty(txt_PrintedBy.Text))
-            {
-                MessageBox.Show("Please enter Printed By", application_name);
-            }
-            /*
-            else if (List_Measure_Average.Count() != Sensor_Batch.total_interval_cls)
-            {
-                MessageBox.Show("Measurement Not Finish", application_name);
-            }
-            */
-            else
-            {
-                try
+                if (ActualPieces < ExpectedPieces)
                 {
-                    Sensor_Batch = Sensor_input_Helper.MySql_Get_Average(IP_Address_Input);
-                    string company_name = SensorHelper_2.read_config_name();
-                    string company_addres = SensorHelper_2.read_config_addr();
-                    bool isPremature = false;
-                    int ExpectedPieces = Sensor_Batch.number_per_interval_cls * Sensor_Batch.total_interval_cls;
-                    int ActualPieces = Sensor_Batch.List_Measure_Result.Count();
-
-                    Sensor_Batch.List_Average_Result = SensorHelper_2.Test_ListSQLMeasureResult();
-                    if (ActualPieces < ExpectedPieces)
-                    {
-                        isPremature = true;
-                        //MessageBox.Show("Measurement was stopped prematurely", application_name);
-                    }
-                    //SensorHelper_2.Generate_Controller_PDF_revised(company_name,company_addres,txt_supplier.Text,txt_PrintedBy.Text,Sensor_Batch,1);
-                    SensorHelper_2.Generate_Controller_PDF_revised_5Aug2021(company_name, company_addres, txt_supplier.Text, txt_PrintedBy.Text, Sensor_Batch, 1, isPremature);
-
-
-                    MessageBox.Show("PDF has been successfully generated", application_name);
-
+                    isPremature = true;
+                    //MessageBox.Show("Measurement was stopped prematurely", application_name);
                 }
-                catch (Exception error)//(Exception e)
-                {
-                    MessageBox.Show(error.ToString(), application_name);
-                    Console.WriteLine(error.Message);
-                }
+                //SensorHelper_2.Generate_Controller_PDF_revised(company_name,company_addres,txt_supplier.Text,txt_PrintedBy.Text,Sensor_Batch,1);
+                SensorHelper_2.Generate_Controller_PDF_revised_5Aug2021(company_name, company_addres, txt_supplier.Text, txt_PrintedBy.Text, Sensor_Batch, 1, isPremature);
+
+
+                MessageBox.Show("PDF has been successfully generated", application_name);
+
             }
-
+            catch (Exception error)//(Exception e)
+            {
+                MessageBox.Show(error.ToString(), application_name);
+                Console.WriteLine(error.Message);
+            }
         }
 
         private void txt_supplier_TextChanged(object sender, TextChangedEventArgs e)

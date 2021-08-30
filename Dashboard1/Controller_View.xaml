@@ -394,13 +394,13 @@
                                     </Border>
                                 </Border>
 
-                                <Button Width="0" Height="25" Margin="35,0,0,5" Padding="3" 
+                                <Button Width="100" Height="25" Margin="15,3,0,5" Padding="3" 
                                         HorizontalAlignment="Left" 
                                  FontSize="14" Background="#264653"  
                                 Foreground="AntiqueWhite" FontWeight="Medium"  FontFamily="calibri" 
                                         Click="Generate_PDF_Click" >Generate PDF</Button>
 
-                                <Button Width="100" Height="25" Margin="10,0,0,5" Padding="3" HorizontalAlignment="Left" 
+                                <Button Width="100" Height="25" Margin="10,3,0,5" Padding="3" HorizontalAlignment="Left" 
                                  FontSize="14" Background="#264653"   
                                 Foreground="AntiqueWhite" FontWeight="Medium"  
                                         FontFamily="calibri" Click="btn_Excel_Download" >Generate Excel</Button>
