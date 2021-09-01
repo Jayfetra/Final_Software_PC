@@ -506,15 +506,8 @@ namespace Dashboard1
             DragMove();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+   
 
-        }
-
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
         private void Browse_Template_Click(object sender, RoutedEventArgs e)
         {
             //string addr_text = "File not found";
@@ -574,7 +567,7 @@ namespace Dashboard1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Open_Controller_Page("192.168.0.9");
+            Open_Controller_Page("192.168.1.6");
 
         }
 

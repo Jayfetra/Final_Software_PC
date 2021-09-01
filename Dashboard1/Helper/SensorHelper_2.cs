@@ -4159,7 +4159,7 @@ namespace Dashboard1.Helper
 
         public static void Generate_Controller_PDF_revised_5Aug2021(string conf_companyname, string conf_companyaddr
             , string label, string printedby, Sql_Measure_Batch batch_data
-            , int language, bool IsPrematureStop
+            , string language, bool IsPrematureStop
             //, List<string> List_Histo_value, List<string> List_Freq_Value
             )
         {
@@ -4253,6 +4253,57 @@ namespace Dashboard1.Helper
             sheet.Range["W8"].Text = (total_average / batch_data.List_Average_Result.Count()).ToString("0.00") + "%";
             // 
 
+            // Language. 1 => English; 0 => Indonesia
+            if (language.ToLower() == "english")
+            {
+
+            }
+            else if (language.ToLower() == "bahasa")
+            {
+                sheet.Range["A6"].Text = "nama suppli";
+                sheet.Range["A7"].Text = "Tanggal waktu";
+                sheet.Range["A8"].Text = "Diprint Oleh";
+                sheet.Range["L6"].Text = "Aplikasi";
+                sheet.Range["L7"].Text = "Temperatur";
+                sheet.Range["L8"].Text = "Nomor Sensor";
+                sheet.Range["R6"].Text = "Jumlah Yang Diukur";
+                sheet.Range["R7"].Text = "Jumlah Interval";
+                sheet.Range["R8"].Text = "Final Rata-Rata Lembab";
+                
+                // nilai average
+                sheet.Range["A33"].Text = "";
+                sheet.Range["B33"].Text = "";
+                sheet.Range["C33"].Text = "";
+                sheet.Range["E33"].Text = "";
+
+                sheet.Range["G33"].Text = "";
+                sheet.Range["I33"].Text = "";
+                sheet.Range["K33"].Text = "";
+                sheet.Range["L33"].Text = "";
+
+                sheet.Range["P33"].Text = "";
+                sheet.Range["S33"].Text = "";
+                sheet.Range["T33"].Text = "";
+                sheet.Range["V33"].Text = "";
+
+                sheet.Range["A52"].Text = "jumlah thereshold";
+                sheet.Range["E52"].Text = "maksimum thereshold";
+                sheet.Range["E53"].Text = "minimum thereshold";
+
+                sheet.Range["A55"].Text = "Official Digunakan";
+                sheet.Range["A56"].Text = "Dicek Oleh";
+                sheet.Range["L56"].Text = "Disetujui Oleh";
+
+                sheet.Range["A59"].Text = "Nama";
+                sheet.Range["F59"].Text = "Signature";
+                sheet.Range["L59"].Text = "Nama";
+                sheet.Range["T59"].Text = "Signature";
+
+
+            }
+
+            //
+
             //sheet.Range["L11"].Value = "Total No Of intervals";
 
             #endregion
@@ -4266,6 +4317,7 @@ namespace Dashboard1.Helper
             string column_Pcs;
             string column_date;
 
+            //
 
             #region 1-17
             //1-17

@@ -125,7 +125,7 @@
 
                 <!-- Historical Section -->
 
-                <Grid Grid.Row="1" Grid.Column="0"  Background="Transparent" >
+                <Grid Grid.Row="1" Grid.Column="0"  Background="Transparent" Height="573" Margin="0,0,0.333,0.333" VerticalAlignment="Bottom" >
 
                     <StackPanel Margin="4,0,4.333,3.667" Orientation="Vertical" Background="Transparent" Height="547" VerticalAlignment="Bottom">
                         <TextBlock HorizontalAlignment="Left"  
@@ -185,7 +185,7 @@
 
                             <!--label -->
                             <StackPanel Orientation="Horizontal">
-                                <Label Width="90" Height="25" FontSize="11." FontWeight="Bold">Supplier Name:</Label>
+                                <Label Width="90" Height="25" FontSize="11." FontWeight="Bold" Name="label_supplier">Supplier Name:</Label>
                                 <TextBox Padding="3,0,0,0" Name="txt_supplier" Width="145" 
                                          VerticalContentAlignment="Center" Text="" 
                                          FontSize="10" FontWeight="SemiBold" 
@@ -214,7 +214,7 @@
 
                             <!-- DateTime -->
                             <StackPanel Orientation="Horizontal" Margin="0,3,0,0">
-                                <Label Width="90" Height="25" FontWeight="Bold">Date/ Time:</Label>
+                                <Label Width="90" Height="25" FontWeight="Bold" Name="label_date" >Date/ Time:</Label>
                                 <TextBox Padding="3,0,0,0" Name="txt_date" Width="145" 
                                          VerticalContentAlignment="Center" Text="" 
                                          FontSize="10" FontWeight="SemiBold" 
@@ -233,7 +233,7 @@
 
                             <!-- Application -->
                             <StackPanel Orientation="Horizontal" Margin="0,3,0,0">
-                                <Label Width="90" Height="25" FontWeight="Bold">Application:</Label>
+                                <Label Width="90" Height="25" FontWeight="Bold" Name="label_application" >Application:</Label>
                                 <TextBox Padding="3,0,0,0" Name="txt_application" Width="145" Height="25"
                                          VerticalContentAlignment="Center" Text="" 
                                          FontSize="10" FontWeight="SemiBold" 
@@ -259,7 +259,7 @@
 
                             <!-- Total Interval -->
                             <StackPanel Orientation="Horizontal"  Margin="0,0,0,0">
-                                <Label Width="90" Height="25" FontWeight="Bold">Total Interval:</Label>
+                                <Label Width="90" Height="25" FontWeight="Bold" Name="label_totinterval">Total Interval:</Label>
                                 <TextBox Padding="3,0,0,0" Name="txt_TotInterval" Width="145" 
                                          VerticalContentAlignment="Center" Text="" 
                                          FontSize="10" FontWeight="SemiBold" 
@@ -278,7 +278,7 @@
 
                             <!-- Total PCS Measure -->
                             <StackPanel Orientation="Horizontal" Margin="0,3,0,0" >
-                                <Label Width="90" Height="25" FontWeight="Bold" >Total PCS:</Label>
+                                <Label Width="90" Height="25" FontWeight="Bold" Name="label_TotPCS">Total PCS:</Label>
                                 <TextBox Padding="3,0,0,0" Name="txt_TotPCS" Width="145" 
                                          VerticalContentAlignment="Center" Text="" 
                                          FontSize="10" FontWeight="SemiBold" 
@@ -313,7 +313,7 @@
 
                             <!-- Temperature -->
                             <StackPanel Width="0" Height="0" Orientation="Horizontal"  Margin="0,3,0,0">
-                                <Label Width="90" Height="25" FontWeight="SemiBold">Temperature:</Label>
+                                <Label Width="90" Height="25" FontWeight="SemiBold" Name="label_printedby" >Temperature:</Label>
                                 <TextBox Padding="3,0,0,0" Name="txt_Temperature" Width="145" 
                                          VerticalContentAlignment="Center" Text="" 
                                          FontSize="10" FontWeight="SemiBold" 
@@ -383,7 +383,7 @@
 
                             <!-- Final Average -->
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                <Label Width="180" Height="30" FontWeight="SemiBold"  FontSize="14">Final Average Moisture (%)</Label>
+                                <Label Width="180" Height="30" FontWeight="SemiBold"  FontSize="14" Name="Label_FinalAverage" >Final Average Moisture (%)</Label>
                                 <Border BorderThickness="1.2 1.2 1.2 1.2" CornerRadius="3.2" BorderBrush="Black" 
                                         Background="FloralWhite" 
                                         Height="25" Margin="0,3,0,5">
@@ -394,16 +394,16 @@
                                     </Border>
                                 </Border>
 
-                                <Button Width="100" Height="25" Margin="15,3,0,5" Padding="3" 
+                                <Button Width="90" Height="25" Margin="10,3,0,5" Padding="3" 
                                         HorizontalAlignment="Left" 
                                  FontSize="14" Background="#264653"  
-                                Foreground="AntiqueWhite" FontWeight="Medium"  FontFamily="calibri" 
+                                Foreground="AntiqueWhite" FontWeight="Medium"  Name="btn_GeneratePDF" FontFamily="calibri" 
                                         Click="Generate_PDF_Click" >Generate PDF</Button>
 
                                 <Button Width="100" Height="25" Margin="10,3,0,5" Padding="3" HorizontalAlignment="Left" 
                                  FontSize="14" Background="#264653"   
                                 Foreground="AntiqueWhite" FontWeight="Medium"  
-                                        FontFamily="calibri" Click="btn_Excel_Download" >Generate Excel</Button>
+                                        FontFamily="calibri" Click="btn_Excel_Download" Name="btn_GenerateXLS" >Generate Excel</Button>
 
                             </StackPanel>
 

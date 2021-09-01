@@ -41,7 +41,7 @@ namespace Dashboard1
         string IP_Address_Input = ((MainWindow)Application.Current.MainWindow).TempObject_Textbox.Text;
         static string Folder_Path = ConfigurationManager.AppSettings["Folder_Path"] ?? "Not Found"; //C:/Sensor_data/
         string PDF_folder_location = Folder_Path+ "Print_Result_Sensor" + ((MainWindow)Application.Current.MainWindow).TempObject_Textbox.Text.Last() + "/" ; 
-
+        string language = ((MainWindow)Application.Current.MainWindow).combobox_language.SelectedValue.ToString();
         List<Sql_Measure_Result> List_Measure_Average = new List<Sql_Measure_Result> { };
         List<Sql_Measure_Result> List_Measure_Average_new = new List<Sql_Measure_Result> { };
         List<SQL_Measure_Grid> List_Measure_Average_grid = new List<SQL_Measure_Grid> { };
@@ -123,6 +123,28 @@ namespace Dashboard1
                 txt_TotInterval.IsEnabled = false;
                 txt_TotPCS.IsEnabled = false;
                 txt_Temperature.IsEnabled = false;
+
+
+                // language
+                if (language == "English")
+                {
+                    Console.WriteLine("alisnya english");
+                }
+
+                else if (language == "Bahasa")
+                {
+                    label_supplier.Content = "nama supplier";
+                    label_date.Content = "tanggal waktu";
+                    label_application.Content = "aplikasi";
+                    label_totinterval.Content = "Total interval";
+                    label_TotPCS.Content = "Total Itung";
+                    label_printedby.Content = "DiPrint Oleh";
+                    Label_FinalAverage.Content = "Final Rata Rata";
+                    btn_GeneratePDF.Content = "Donlod PDF";
+                    btn_GenerateXLS.Content = "Donlod XLS";
+
+                }
+
 
             }
             catch (Exception error)//(Exception e)
@@ -315,8 +337,10 @@ namespace Dashboard1
                     string company_name = SensorHelper_2.read_config_name();
                     string company_addres = SensorHelper_2.read_config_addr();
                     Sensor_Batch.List_Average_Result = List_Measure_Average;
+
+                    // 1  =  english; 0 = indonesia
                     SensorHelper_2.Generate_Controller_PDF_revised_5Aug2021(company_name, company_addres, txt_supplier.Text
-                        , txt_PrintedBy.Text, Sensor_Batch, 1, isPremature);
+                        , txt_PrintedBy.Text, Sensor_Batch, language, isPremature);
 
 
                     if (ActualPieces < ExpectedPieces)
@@ -358,7 +382,7 @@ namespace Dashboard1
                     //MessageBox.Show("Measurement was stopped prematurely", application_name);
                 }
                 //SensorHelper_2.Generate_Controller_PDF_revised(company_name,company_addres,txt_supplier.Text,txt_PrintedBy.Text,Sensor_Batch,1);
-                SensorHelper_2.Generate_Controller_PDF_revised_5Aug2021(company_name, company_addres, txt_supplier.Text, txt_PrintedBy.Text, Sensor_Batch, 1, isPremature);
+                SensorHelper_2.Generate_Controller_PDF_revised_5Aug2021(company_name, company_addres, txt_supplier.Text, txt_PrintedBy.Text, Sensor_Batch, language, isPremature);
 
 
                 MessageBox.Show("PDF has been successfully generated", application_name);
