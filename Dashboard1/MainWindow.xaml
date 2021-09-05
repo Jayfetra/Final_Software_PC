@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Dashboard1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
-        Title="Gii MX-01 Measurement Systemz" 
+        Title="Gii RX-Series Data Logging Software (Ver. 1.01)"
         mc:Ignorable="d" Height="670" Width="1124" ResizeMode="CanMinimize" 
         WindowStartupLocation="CenterScreen">
     <Window.Background>
@@ -97,11 +97,13 @@
 
     <Grid Margin="30">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="853*"/>
+            <ColumnDefinition Width="852*"/>
             <ColumnDefinition Width="57*"/>
-            <ColumnDefinition Width="104*"/>
-            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="122*"/>
             <ColumnDefinition Width="27*"/>
+            
+            
+            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <!-- Title Start -->
@@ -203,8 +205,10 @@
         <Grid Grid.Row="3" Margin="0,5,4.667,5.667" Grid.ColumnSpan="5" Grid.RowSpan="2" />
 
         <Grid Grid.Row="5" Background="Transparent" Grid.ColumnSpan="2" Margin="0,0.333,0.333,-1"/>
-        <RadioButton Checked="RadioBtn1_English" Name="RadioBtn_English" Content="English" HorizontalAlignment="Left" Margin="650,-11,0,0" VerticalAlignment="Top" Width="108" IsEnabled="False" Visibility="Hidden"/>
-        <RadioButton Checked="RadioBtn1_Indo" Name="RadioBtn_Bahasa" Content="Bahasa" HorizontalAlignment="Left" Margin="720,-11,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden"/>
+        <RadioButton  Name="RadioBtn_English" Content="English" HorizontalAlignment="Left" Margin="650,-11,0,0" VerticalAlignment="Top" 
+                     Width="108" IsEnabled="False" Visibility="Hidden"/>
+        <RadioButton  Name="RadioBtn_Bahasa" Content="Bahasa" HorizontalAlignment="Left" Margin="720,-11,0,0" VerticalAlignment="Top" 
+                     IsEnabled="False" Visibility="Hidden"/>
         <Button Click="Button_Click_1" Content="ENTER" HorizontalAlignment="Left" Margin="126,87.333,0,-68" Grid.Row="5" VerticalAlignment="Top" Width="74" Background="#edc064" Foreground="Black"/>
         <Button Click="Button_Click_2" Content="ENTER" HorizontalAlignment="Left" Margin="302,87.333,0,-68" Grid.Row="5" VerticalAlignment="Top" Width="74" Background="#edc064" Foreground="Black"/>
         <Button Click="Button_Click_3" Content="ENTER" HorizontalAlignment="Left" Margin="492,87.333,0,-68" Grid.Row="5" VerticalAlignment="Top" Width="74" Background="#edc064" Foreground="Black"/>

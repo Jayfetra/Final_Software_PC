@@ -445,25 +445,30 @@
                      Text="" VerticalAlignment="Top" Width="229" VerticalContentAlignment="Top" Foreground="Red" />
 
             <TextBox Background="White" Name="Error_TextBox_Detail" TextAlignment="Left" AcceptsReturn="True" 
-                     VerticalScrollBarVisibility="Visible" TextChanged="Error_TextBox_TextChanged" 
+                      TextChanged="Error_TextBox_TextChanged" 
                      HorizontalAlignment="Left" Height="84" Margin="18,429,0,0" TextWrapping="Wrap" Padding="5,0,5,0"
-                     Text="" VerticalAlignment="Top" Width="229" VerticalContentAlignment="Top"  Foreground="Red"/>
+                     Text="" VerticalAlignment="Top" Width="229" VerticalContentAlignment="Top"  Foreground="Red"
+                     VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"
+                     />
 
             <TextBox Background="White" x:Name="Error_TextBox_Fixing" TextAlignment="Left" AcceptsReturn="True" 
-                     VerticalScrollBarVisibility="Visible" TextChanged="Error_TextBox_TextChanged" 
+                     TextChanged="Error_TextBox_TextChanged" 
                      HorizontalAlignment="Left" Height="114" Margin="283,399,0,0" TextWrapping="Wrap" Padding="5,0,5,0"
-                     Text="" VerticalAlignment="Top" Width="255" VerticalContentAlignment="Top" Foreground="Red" />
+                     Text="" VerticalAlignment="Top" Width="255" VerticalContentAlignment="Top" Foreground="Red" 
+                     VerticalScrollBarVisibility="Visible" 
+                     
+                     />
 
             <Label Content="Pcs" HorizontalAlignment="Left" Height="26" Margin="506,580,0,0" VerticalAlignment="Top"/>
             <Label Content="Pcs" HorizontalAlignment="Left" Height="26" Margin="233,579,0,0" VerticalAlignment="Top"/>
 
             <TextBox Name="TheresholdMax_TextBox" Height="27" Margin="84,575,0,0" 
                      TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="15" VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left" HorizontalContentAlignment="Center"/>
+                     HorizontalAlignment="Left" HorizontalContentAlignment="Center" />
 
             <TextBox Name="TheresholdMin_TextBox" Height="27" Margin="352,575,0,0" 
                      TextWrapping="Wrap" VerticalAlignment="Top" Width="58" FontSize="15" VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left" HorizontalContentAlignment="Center"/>
+                     HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"/>
 
             <TextBox Name="NumOf_TheresholdMin_TextBox" Height="27" Margin="446,575,0,0" 
                      

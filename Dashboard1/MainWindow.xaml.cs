@@ -225,29 +225,6 @@ namespace Dashboard1
             }
         }
 
-        private void RadioBtn1_Indo(object sender, RoutedEventArgs e)
-        {
-            guide_title.Text = "Instruksi:";
-            guide_step1.Text = "1. Setelah menghubungkan USB, pergi ke 'Device Manager' dan lihat di bawah 'Ports (COM & LPT)' untuk memeriksa nomor COM Port.";
-            guide_step2.Text = "2. Pilih nomor COM Port untuk setiap SENSOR yang sesuai dan pilih Baud rate menjadi 600.";
-            guide_step3.Text = "3. Tekan 'START' untuk masuk ke halaman SENSOR sebelum Anda mulai mengukur dengan penguji kadar air in-line.";
-            guide_step4.Text = "4. Setelah setiap pengukuran selesai, tutup jendela SENSOR dan tekan 'START' lagi untuk membuka jendela baru untuk pengukuran berikutnya.";
-            guide_step5.Text = "5. Silakan hubungi indo_sales@globalinstrumentsg.com untuk masalah apa pun.";
-            guide_step6.Text = "* Tekan tombol refresh, apabila Serial Port tidak ditemukan.";
-
-        }
-        private void RadioBtn1_English(object sender, RoutedEventArgs e)
-        {
-            guide_step1.Text = "1. Refer to page __ of instruction manual to set up PC Software IP address after installation. This only needs to be done once.";
-            guide_step2.Text = "2. Always start this software before measurement begins.";
-            guide_step3.Text = "3. Enter your company name, address and company logo for PDF report letterhead.";
-            guide_step4.Text = "4. Select Template 'excel_template.xls'";
-            guide_step5.Text = "5. Choose preferred PDF report output";
-            guide_step6.Text = "6. Click 'ENTER' on the corresponding Sensor number that you are using to enter Data Logging page. ";
-            guide_step7.Text = "7. Press 'START' on controller to begin measurement and data logging.";
-
-        }
-
         /*
 
                private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -567,7 +544,7 @@ namespace Dashboard1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Open_Controller_Page("192.168.1.6");
+            Open_Controller_Page("192.168.0.1");
 
         }
 
@@ -614,10 +591,10 @@ namespace Dashboard1
         {
             if (combobox_language.SelectedValue.ToString() == "English")
             {
-                guide_step1.Text = "1. Refer to page __ of instruction manual to set up PC Software IP address after installation. This only needs to be done once.";
+                guide_step1.Text = "1. For first installation, setting IP Address by Refer to 'Operation Manual' section 'PC Software Setup'.";
                 guide_step2.Text = "2. Always start this software before measurement begins.";
                 guide_step3.Text = "3. Enter your company name, address and company logo for PDF report letterhead.";
-                guide_step4.Text = "4. Select Template 'excel_template.xls'";
+                guide_step4.Text = "4. Select Template 'excel_template.xls' inside the thumbdrive directory";
                 guide_step5.Text = "5. Choose preferred PDF report output";
                 guide_step6.Text = "6. Click 'ENTER' on the corresponding Sensor number that you are using to enter Data Logging page. ";
                 guide_step7.Text = "7. Press 'START' on controller to begin measurement and data logging.";
